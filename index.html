@@ -1,144 +1,195 @@
-<!DOCTYPE html>
-<html lang="el">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prosfo | Η AI Εφαρμογή για Επαγγελματικές Προσφορές</title>
-    <link rel="icon" type="image/png" href="icon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Inter', sans-serif; } </style>
-</head>
-<body class="bg-slate-950 text-slate-50 antialiased overflow-x-hidden">
+import { motion } from "framer-motion";
+import { Clock, Smartphone, FileText, Star, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom"; // Αν χρησιμοποιείς Next.js, άλλαξέ το σε import Link from 'next/link'
 
-    <!-- Header -->
-    <header class="container mx-auto px-6 py-8 flex justify-center items-center">
-        <a href="https://prosfo.app" class="flex items-center gap-3 group">
-            <img src="icon.png" alt="Prosfo Logo" class="w-12 h-12 rounded-xl shadow-md border border-slate-800 transition transform group-hover:scale-105">
-            <span class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Prosfo<span class="text-blue-500">.app</span></span>
-        </a>
-    </header>
+// Βοηθητικό component για τα Fade-in Animations
+const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-50px" }}
+    transition={{ duration: 0.6, delay, ease: "easeOut" }}
+  >
+    {children}
+  </motion.div>
+);
 
-    <!-- Hero Section -->
-    <section class="container mx-auto px-6 pt-10 pb-20 text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-8">
-            <span class="inline-block w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-            Powered by Advanced AI
-        </div>
-
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
-            Μίλα ελεύθερα. <br>
-            <span class="bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                Το AI φτιάχνει την προσφορά.
+export default function Index() {
+  return (
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <FadeIn>
+            <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide mb-6">
+              Η Νο1 Εφαρμογή για Επαγγελματίες
             </span>
-        </h1>
-
-        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Η πρώτη τεχνητή νοημοσύνη που καταλαβαίνει το επάγγελμά σου. Διαχωρίζει υλικά από εργασία, διορθώνει την ορθογραφία και γράφει τους νομικούς όρους αυτόματα.
-        </p>
-
-        <a href="https://prosfo.app" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-9 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105 shadow-xl shadow-blue-600/30">
-            Ξεκίνα Δωρεάν Τώρα
-        </a>
-
-        <!-- Hero Mockup -->
-        <div class="mt-16 mx-auto max-w-5xl rounded-2xl border border-slate-800 bg-slate-900/60 p-2 shadow-2xl shadow-black/80">
-            <img src="hero-mockup.png" alt="Prosfo Dashboard" class="rounded-xl w-full h-auto object-cover">
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-8">
+              Επαγγελματικές Προσφορές <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                σε μόλις 2 λεπτά.
+              </span>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className="mt-4 text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+              Ξεχάστε τις ατελείωτες ώρες στο γραφείο. Φτιάξτε την προσφορά σας την ώρα της αυτοψίας, απευθείας από το κινητό σας, και κλείστε τη δουλειά επιτόπου.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <div className="flex justify-center gap-4">
+              <Link
+                to="/login"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-blue-600 rounded-xl hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Ξεκινήστε Δωρεάν <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </div>
+          </FadeIn>
         </div>
-    </section>
+      </section>
 
-    <!-- AI Features Grid -->
-    <section class="bg-slate-900/40 py-24 border-y border-slate-800/60">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Τι κάνει το AI για εσένα στο παρασκήνιο;</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- AI Feature 1 -->
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Διαχωρισμός Δεδομένων</h3>
-                    <p class="text-slate-400 text-sm">Αναγνωρίζει μέσα από το ελεύθερο κείμενό σου τι είναι ανταλλακτικό, τι είναι υπηρεσία, πόσα τεμάχια ανέφερες και ποιο είναι το τελικό κόστος.</p>
-                </div>
-                <!-- AI Feature 2 -->
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Έξυπνοι Νομικοί Όροι</h3>
-                    <p class="text-slate-400 text-sm">Αντιλαμβάνεται την ειδικότητά σου (π.χ. Ανελκυστήρες, Μηχανικός) και γράφει αυτόματα τις ρήτρες προστασίας που ταιριάζουν ακριβώς στον κλάδο σου.</p>
-                </div>
-                <!-- AI Feature 3 -->
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Ορθογραφικός Έλεγχος</h3>
-                    <p class="text-slate-400 text-sm">Διορθώνει αυτόματα λάθη, βάζει τόνους και μορφοποιεί σωστά τα ακρωνύμια (ΦΠΑ, ΙΒΑΝ) για να φαίνεσαι πάντα 100% επαγγελματίας.</p>
-                </div>
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-slate-900">Σχεδιασμένο για την καθημερινότητά σας</h2>
+              <p className="mt-4 text-lg text-slate-600">Όλα όσα χρειάζεστε για να φαίνεστε 100% επαγγελματίας, χωρίς κόπο.</p>
             </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Feature 1 */}
+            <FadeIn delay={0.1}>
+              <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600">
+                  <Clock className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-slate-900">Αστραπιαία Ταχύτητα</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Υπαγορεύστε τις εργασίες (Voice-to-text) και αφήστε την εφαρμογή να κάνει τα υπόλοιπα. Κερδίστε πίσω τον ελεύθερο χρόνο σας.
+                </p>
+              </div>
+            </FadeIn>
+
+            {/* Feature 2 */}
+            <FadeIn delay={0.2}>
+              <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 text-indigo-600">
+                  <Smartphone className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-slate-900">100% Mobile-First</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Τραβήξτε φωτογραφίες από το έργο, βάλτε τιμές και στείλτε την προσφορά από το κινητό, πριν καν μπείτε στο αυτοκίνητο.
+                </p>
+              </div>
+            </FadeIn>
+
+            {/* Feature 3 */}
+            <FadeIn delay={0.3}>
+              <div className="p-8 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6 text-teal-600">
+                  <FileText className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-slate-900">Επαγγελματικά PDF</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Αυτόματη παραγωγή καθαρών, επώνυμων PDF με ενσωματωμένες φωτογραφίες και αναλυτικά κόστη, έτοιμα για αποστολή.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Professions Section (Images needed here) -->
-    <section class="container mx-auto px-6 py-24 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Μια λύση για κάθε τεχνικό κλάδο</h2>
-        <p class="text-slate-400 mb-16 max-w-2xl mx-auto">Το Prosfo.app προσαρμόζεται αυτόματα. Δες πώς μεταμορφώνει την καθημερινότητα σε διαφορετικά επαγγέλματα.</p>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <!-- Profession 1 -->
-            <div class="relative group rounded-2xl overflow-hidden border border-slate-800 aspect-square">
-                <img src="prof-elevator.png" alt="Εγκαταστάτες Ανελκυστήρων" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end justify-center p-4">
-                    <span class="font-bold text-white text-lg">Ανελκυστήρες</span>
-                </div>
+      {/* Testimonials Section (Social Proof) */}
+      <section className="py-24 bg-slate-900 text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Τι λένε οι επαγγελματίες για το Proso.app</h2>
+              <p className="text-slate-400 text-lg">Η επιτυχία κρύβεται στον χρόνο που κερδίζετε.</p>
             </div>
-            <!-- Profession 2 -->
-            <div class="relative group rounded-2xl overflow-hidden border border-slate-800 aspect-square">
-                <img src="prof-mechanic.png" alt="Μηχανικοί Οχημάτων" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end justify-center p-4">
-                    <span class="font-bold text-white text-lg">Συνεργεία</span>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Highlighted Testimonial (Η πελάτισσα σου) */}
+            <FadeIn delay={0.1}>
+              <div className="bg-slate-800 p-8 rounded-2xl border border-blue-500/30 relative shadow-2xl shadow-blue-900/20 transform md:-translate-y-4">
+                <div className="flex text-yellow-400 mb-4">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
                 </div>
-            </div>
-            <!-- Profession 3 -->
-            <div class="relative group rounded-2xl overflow-hidden border border-slate-800 aspect-square">
-                <img src="prof-electrician.png" alt="Οικοδομή & Ανακαινίσεις" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end justify-center p-4">
-                    <span class="font-bold text-white text-lg">Ανακαινίσεις</span>
+                <p className="text-lg italic text-slate-200 mb-6 font-medium leading-relaxed">
+                  "Παλιά χρειαζόμουν 45 λεπτά για να συντάξω μια προσφορά με φωτογραφίες. Με το Proso.app την έστειλα στον πελάτη σε ακριβώς 2 λεπτά! Δεν το πίστευα."
+                </p>
+                <div className="flex items-center gap-4 mt-auto">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center font-bold text-xl">M</div>
+                  <div>
+                    <h4 className="font-bold">Μαρία</h4>
+                    <span className="text-sm text-slate-400">Ελεύθερη Επαγγελματίας</span>
+                  </div>
                 </div>
-            </div>
-            <!-- Profession 4 -->
-            <div class="relative group rounded-2xl overflow-hidden border border-slate-800 aspect-square">
-                <img src="prof-hvac.png" alt="Ψυκτικοί & Κλιματισμός" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end justify-center p-4">
-                    <span class="font-bold text-white text-lg">Κλιματισμός</span>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700 mt-0 md:mt-4">
+                <div className="flex text-yellow-400 mb-4">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
                 </div>
-            </div>
+                <p className="text-slate-300 mb-6 leading-relaxed">
+                  "Φτιάχνω τις προσφορές μου κατευθείαν από το κινητό, την ώρα που κάνω την αυτοψία στον χώρο. Έχω γλιτώσει άπειρες ώρες γραφείου."
+                </p>
+                <div className="flex items-center gap-4 mt-auto">
+                  <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center font-bold">Γ</div>
+                  <div>
+                    <h4 className="font-bold">Γιάννης</h4>
+                    <span className="text-sm text-slate-400">Τεχνικός / Εργολάβος</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <div className="bg-slate-800 p-8 rounded-2xl border border-slate-700 mt-0 md:mt-4">
+                <div className="flex text-yellow-400 mb-4">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+                </div>
+                <p className="text-slate-300 mb-6 leading-relaxed">
+                  "Τα PDF που βγάζει φαίνονται 100% επαγγελματικά. Έκλεισα δύο δουλειές την πρώτη εβδομάδα επειδή έστειλα την προσφορά πριν καν φύγω από το έργο."
+                </p>
+                <div className="flex items-center gap-4 mt-auto">
+                  <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center font-bold">Κ</div>
+                  <div>
+                    <h4 className="font-bold">Κώστας</h4>
+                    <span className="text-sm text-slate-400">Ηλεκτρολόγος</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Feature Zig-Zag -->
-    <section class="container mx-auto px-6 py-12 space-y-24">
-        <!-- Zig-Zag 1 -->
-        <div class="flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold mb-4">Read-Only PDF & Φωτογραφίες</h2>
-                <p class="text-slate-400 text-lg mb-6">Τέλος στα έγγραφα που "σπάνε". Το σύστημα παράγει ένα κλειδωμένο (Read-Only) PDF, στοιχισμένο τέλεια, όπου κανείς δεν μπορεί να πειράξει τις τιμές. Πρόσθεσε φωτογραφίες του χώρου και άσε το AI να κάνει τη σελιδοποίηση.</p>
-            </div>
-            <div class="md:w-1/2 w-full">
-                <img src="feature-2-mockup.png" alt="PDF Export" class="rounded-2xl border border-slate-800 w-full shadow-2xl">
-            </div>
-        </div>
-    </section>
+      {/* Footer CTA */}
+      <section className="py-20 bg-blue-600 text-center">
+        <FadeIn>
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-4xl font-bold text-white mb-6">Έτοιμοι να κερδίσετε πίσω τον χρόνο σας;</h2>
+            <p className="text-blue-100 text-xl mb-10">Αφήστε την χαρτούρα και επικεντρωθείτε στη δουλειά σας.</p>
+            <Link
+              to="/login"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-blue-600 bg-white rounded-xl hover:bg-slate-50 hover:scale-105 shadow-xl transition-all duration-300"
+            >
+              Δοκιμάστε το Δωρεάν Τώρα
+            </Link>
+          </div>
+        </FadeIn>
+      </section>
 
-    <!-- Bottom CTA -->
-    <section class="container mx-auto px-6 py-20 mb-6">
-        <div class="bg-gradient-to-b from-blue-900/30 to-slate-900 rounded-3xl border border-blue-500/20 p-12 text-center max-w-4xl mx-auto shadow-2xl">
-            <h2 class="text-3xl md:text-5xl font-black mb-6 text-white">Άσε το AI να κάνει τη χαρτούρα.</h2>
-            <p class="text-slate-400 text-lg mb-8">Εσύ κάνε τη δουλειά, εμείς φτιάχνουμε την προσφορά.</p>
-            <a href="https://prosfo.app" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-9 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105 shadow-xl">
-                Ξεκίνα Δωρεάν
-            </a>
-        </div>
-    </section>
-
-    <footer class="border-t border-slate-800/80 py-8 text-center text-slate-500 text-sm">
-        <p>© 2026 Prosfo.app — All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+    </div>
+  );
+}
