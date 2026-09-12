@@ -49,6 +49,16 @@
     
     <style> 
         body { font-family: 'Inter', sans-serif; } 
+
+        /* Πρόσθεσε αυτό μέσα στο <style> tag σου */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
         
         /* CSS για τα Fade-in Animations */
         .fade-element {
@@ -107,7 +117,7 @@
 
             <div class="lg:w-1/2 fade-element delay-200 relative w-full max-w-lg mx-auto lg:max-w-none">
                 <div class="absolute inset-0 bg-blue-500/20 blur-[80px] rounded-full z-0 transform scale-75"></div>
-                <img src="mastoras.gif" alt="Prosfo AI Βοηθός" class="relative z-10 w-full h-auto object-contain drop-shadow-2xl">
+               <img src="mastoras.png" alt="Prosfo AI Βοηθός" class="relative z-10 w-full h-auto object-contain drop-shadow-2xl animate-float">
             </div>
             
         </div>
