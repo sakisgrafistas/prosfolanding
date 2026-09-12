@@ -28,65 +28,125 @@
 <body class="bg-slate-950 text-slate-50 antialiased overflow-x-hidden">
 
     <!-- Header -->
-    <header class="container mx-auto px-6 py-8 flex justify-center items-center">
+    <header class="container mx-auto px-6 py-6 flex justify-between items-center">
         <a href="https://prosfo.app" class="flex items-center gap-3 group">
-            <img src="icon.png" alt="Prosfo Logo" class="w-12 h-12 rounded-xl shadow-md border border-slate-800 transition transform group-hover:scale-105">
-            <span class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Prosfo<span class="text-blue-500">.app</span></span>
+            <img src="icon.png" alt="Prosfo Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-xl shadow-md border border-slate-800 transition transform group-hover:scale-105">
+            <span class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Prosfo<span class="text-blue-500">.app</span></span>
+        </a>
+        <a href="https://prosfo.app" class="hidden md:inline-block border border-slate-700 hover:bg-slate-800 text-white px-5 py-2 rounded-lg font-medium transition">
+            Είσοδος
         </a>
     </header>
 
     <!-- Hero Section -->
-    <section class="container mx-auto px-6 pt-10 pb-20 text-center">
-        <div class="fade-element inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-8">
+    <section class="container mx-auto px-6 pt-12 pb-20 text-center">
+        <div class="fade-element inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-sm font-medium mb-8 shadow-lg shadow-blue-500/10">
             <span class="inline-block w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-            Powered by Advanced AI
+            100% Ελληνική Εφαρμογή Τεχνητής Νοημοσύνης
         </div>
 
         <h1 class="fade-element delay-100 text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight max-w-5xl mx-auto">
-            Μίλα ελεύθερα. <br>
+            Η προσφορά ετοιμάζεται <br>
             <span class="bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
-                Το AI φτιάχνει την προσφορά.
+                πριν καν μπεις στο φορτηγάκι.
             </span>
         </h1>
 
         <p class="fade-element delay-200 text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Η πρώτη τεχνητή νοημοσύνη που καταλαβαίνει το επάγγελμά σου. Διαχωρίζει υλικά από εργασία, διορθώνει την ορθογραφία και γράφει τους νομικούς όρους αυτόματα.
+            Πάτα το μικρόφωνο, πες τι υλικά και εργασία χρειάζεσαι, και το AI φτιάχνει ένα τέλειο PDF με το λογότυπό σου, ΦΠΑ, φωτογραφίες και έτοιμο IBAN/IRIS. 
         </p>
 
-        <div class="fade-element delay-300">
-            <a href="https://prosfo.app" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-9 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105 shadow-xl shadow-blue-600/30">
-                Ξεκίνα Δωρεάν Τώρα
+        <div class="fade-element delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://prosfo.app" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-9 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105 shadow-xl shadow-blue-600/30">
+                Δωρεάν Δοκιμή 7 Ημερών
             </a>
+            <p class="text-sm text-slate-500 font-medium">Δεν απαιτείται κάρτα για την εγγραφή</p>
         </div>
 
         <!-- Hero Mockup -->
-        <div class="fade-element mt-16 mx-auto max-w-5xl rounded-2xl border border-slate-800 bg-slate-900/60 p-2 shadow-2xl shadow-black/80">
+        <div class="fade-element delay-300 mt-16 mx-auto max-w-5xl rounded-2xl border border-slate-800 bg-slate-900/60 p-2 shadow-2xl shadow-black/80 relative">
             <img src="hero-mockup.png" alt="Prosfo Dashboard" class="rounded-xl w-full h-auto object-cover">
         </div>
     </section>
 
-    <!-- AI Features Grid -->
+    <!-- NEW: How it Works (3 Steps) -->
+    <section class="py-24 bg-slate-900/20 border-t border-slate-800/50">
+        <div class="container mx-auto px-6">
+            <div class="fade-element text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Από την αυτοψία στο Viber του πελάτη σε 1 λεπτό</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="fade-element delay-100 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-500 text-3xl font-bold mb-6 border border-blue-500/30">1</div>
+                    <img src="step-1-mic.png" alt="Φωνητική Εντολή" class="w-48 h-auto mb-6 rounded-2xl shadow-lg border border-slate-800 transform transition hover:-translate-y-2">
+                    <h3 class="text-xl font-bold mb-2">Μίλα στο Κινητό</h3>
+                    <p class="text-slate-400">Πάτα το κόκκινο κουμπί και περιέγραψε τη δουλειά όπως θα την έλεγες στο τηλέφωνο.</p>
+                </div>
+                
+                <div class="fade-element delay-200 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-500 text-3xl font-bold mb-6 border border-blue-500/30">2</div>
+                    <img src="step-2-ai.png" alt="AI Επεξεργασία" class="w-48 h-auto mb-6 rounded-2xl shadow-lg border border-slate-800 transform transition hover:-translate-y-2">
+                    <h3 class="text-xl font-bold mb-2">Το AI Υπολογίζει</h3>
+                    <p class="text-slate-400">Ξεχωρίζει υλικά/εργασία, βάζει ΦΠΑ (24%), διορθώνει ορθογραφία και προσθέτει νομικούς όρους.</p>
+                </div>
+                
+                <div class="fade-element delay-300 flex flex-col items-center">
+                    <div class="w-20 h-20 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-500 text-3xl font-bold mb-6 border border-blue-500/30">3</div>
+                    <img src="step-3-share.png" alt="Αποστολή PDF" class="w-48 h-auto mb-6 rounded-2xl shadow-lg border border-slate-800 transform transition hover:-translate-y-2">
+                    <h3 class="text-xl font-bold mb-2">Στείλε το PDF</h3>
+                    <p class="text-slate-400">Έτοιμο επαγγελματικό PDF με φωτογραφίες. Στείλ' το κατευθείαν μέσω Viber, WhatsApp ή Email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expanded Features Grid -->
     <section class="bg-slate-900/40 py-24 border-y border-slate-800/60">
         <div class="container mx-auto px-6">
-            <h2 class="fade-element text-3xl md:text-4xl font-bold text-center mb-16">Τι κάνει το AI για εσένα στο παρασκήνιο;</h2>
+            <h2 class="fade-element text-3xl md:text-4xl font-bold text-center mb-16">Ένα πλήρες γραφείο στην τσέπη σου</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- AI Feature 1 -->
-                <div class="fade-element delay-100 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
+                
+                <!-- Feature 1 -->
+                <div class="fade-element bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
                     <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg></div>
                     <h3 class="text-xl font-semibold mb-3">Διαχωρισμός Δεδομένων</h3>
-                    <p class="text-slate-400 text-sm">Αναγνωρίζει μέσα από το ελεύθερο κείμενό σου τι είναι ανταλλακτικό, τι είναι υπηρεσία, πόσα τεμάχια ανέφερες και ποιο είναι το τελικό κόστος.</p>
+                    <p class="text-slate-400 text-sm">Αναγνωρίζει μέσα από το ελεύθερο κείμενό σου τι είναι ανταλλακτικό, τι είναι υπηρεσία, ποσότητες και τελικό κόστος.</p>
                 </div>
-                <!-- AI Feature 2 -->
-                <div class="fade-element delay-200 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
+                
+                <!-- Feature 2 -->
+                <div class="fade-element delay-100 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
                     <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
                     <h3 class="text-xl font-semibold mb-3">Έξυπνοι Νομικοί Όροι</h3>
-                    <p class="text-slate-400 text-sm">Αντιλαμβάνεται την ειδικότητά σου (π.χ. Ανελκυστήρες, Μηχανικός) και γράφει αυτόματα τις ρήτρες προστασίας που ταιριάζουν ακριβώς στον κλάδο σου.</p>
+                    <p class="text-slate-400 text-sm">Αντιλαμβάνεται την ειδικότητά σου και γράφει αυτόματα τις ρήτρες προστασίας που ταιριάζουν ακριβώς στον κλάδο σου.</p>
                 </div>
-                <!-- AI Feature 3 -->
-                <div class="fade-element delay-300 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Ορθογραφικός Έλεγχος</h3>
-                    <p class="text-slate-400 text-sm">Διορθώνει αυτόματα λάθη, βάζει τόνους και μορφοποιεί σωστά τα ακρωνύμια (ΦΠΑ, ΙΒΑΝ) για να φαίνεσαι πάντα 100% επαγγελματίας.</p>
+                
+                <!-- Feature 3 -->
+                <div class="fade-element delay-200 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
+                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+                    <h3 class="text-xl font-semibold mb-3">Έως 5 Φωτογραφίες</h3>
+                    <p class="text-slate-400 text-sm">Βγάλε φωτογραφίες την ώρα της αυτοψίας και το σύστημα θα τις ενσωματώσει αυτόματα στο τελικό PDF.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="fade-element bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
+                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg></div>
+                    <h3 class="text-xl font-semibold mb-3">Εγκατάσταση στο Κινητό</h3>
+                    <p class="text-slate-400 text-sm">Λειτουργεί σαν κανονικό app (PWA) στην οθόνη του κινητού σου, χωρίς να γεμίζει τον αποθηκευτικό σου χώρο.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="fade-element delay-100 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
+                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg></div>
+                    <h3 class="text-xl font-semibold mb-3">Αυτόματο IBAN & IRIS</h3>
+                    <p class="text-slate-400 text-sm">Αποθήκευσε το λογότυπο, τα στοιχεία της εταιρείας σου, το IBAN και το IRIS μια φορά. Μπαίνουν σε κάθε προσφορά αυτόματα.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="fade-element delay-200 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
+                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg></div>
+                    <h3 class="text-xl font-semibold mb-3">Ιστορικό & Οργάνωση</h3>
+                    <p class="text-slate-400 text-sm">Δες ποιες προσφορές έγιναν αποδεκτές, βρες παλιούς πελάτες και κάνε επανάληψη (duplicate) σε δευτερόλεπτα.</p>
                 </div>
             </div>
         </div>
@@ -95,8 +155,8 @@
     <!-- Professions Section -->
     <section class="container mx-auto px-6 py-24 text-center">
         <div class="fade-element">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Μια λύση για κάθε τεχνικό κλάδο</h2>
-            <p class="text-slate-400 mb-16 max-w-2xl mx-auto">Το Prosfo.app προσαρμόζεται αυτόματα. Δες πώς μεταμορφώνει την καθημερινότητα σε διαφορετικά επαγγέλματα.</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ιδανικό για πάνω από 25 τεχνικούς κλάδους</h2>
+            <p class="text-slate-400 mb-16 max-w-2xl mx-auto">Είτε είσαι εργολάβος, είτε ελεύθερος επαγγελματίας. Το Prosfo.app προσαρμόζεται στη γλώσσα και τις ανάγκες σου.</p>
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -127,21 +187,56 @@
         </div>
     </section>
 
-    <!-- Feature Zig-Zag -->
-    <section class="container mx-auto px-6 py-12 space-y-24">
-        <div class="fade-element flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold mb-4">Read-Only PDF & Φωτογραφίες</h2>
-                <p class="text-slate-400 text-lg mb-6">Τέλος στα έγγραφα που "σπάνε". Το σύστημα παράγει ένα κλειδωμένο (Read-Only) PDF, στοιχισμένο τέλεια, όπου κανείς δεν μπορεί να πειράξει τις τιμές. Πρόσθεσε φωτογραφίες του χώρου και άσε το AI να κάνει τη σελιδοποίηση.</p>
+    <!-- NEW: Pricing Section -->
+    <section class="py-24 bg-slate-900/30 border-y border-slate-800/50">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="fade-element text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Επένδυσε στον επαγγελματισμό σου</h2>
+                <p class="text-slate-400 text-lg">Κλείσε περισσότερες δουλειές, γλιτώνοντας άπειρες ώρες γραφείου. Με αυτόματη έκδοση B2B τιμολογίου.</p>
             </div>
-            <div class="md:w-1/2 w-full">
-                <img src="feature-2-mockup.png" alt="PDF Export" class="rounded-2xl border border-slate-800 w-full shadow-2xl shadow-blue-900/20">
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Monthly Plan -->
+                <div class="fade-element bg-slate-900 rounded-3xl border border-slate-800 p-8 shadow-xl flex flex-col">
+                    <h3 class="text-2xl font-bold text-white mb-2">Μηνιαίο</h3>
+                    <p class="text-slate-400 mb-6">Ευελιξία μήνα με το μήνα.</p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-black text-white">9,90€</span>
+                        <span class="text-slate-400">/μήνα</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center text-slate-300"><svg class="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Απεριόριστες προσφορές</li>
+                        <li class="flex items-center text-slate-300"><svg class="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> AI Φωνητική καταγραφή</li>
+                        <li class="flex items-center text-slate-300"><svg class="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Ενσωμάτωση φωτογραφιών</li>
+                    </ul>
+                    <a href="https://prosfo.app" class="w-full block text-center bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-xl font-bold transition">Ξεκίνα με Δωρεάν Δοκιμή</a>
+                </div>
+
+                <!-- Yearly Plan (Highlighted) -->
+                <div class="fade-element delay-100 bg-gradient-to-b from-blue-900/40 to-slate-900 rounded-3xl border border-blue-500/50 p-8 shadow-2xl shadow-blue-900/20 flex flex-col relative transform md:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                        Δώρο 2 Μήνες
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Ετήσιο</h3>
+                    <p class="text-blue-200 mb-6">Η έξυπνη επιλογή για επαγγελματίες.</p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-black text-white">99,00€</span>
+                        <span class="text-slate-400">/χρόνο</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center text-slate-200"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Όλα όσα περιλαμβάνει το μηνιαίο</li>
+                        <li class="flex items-center text-slate-200"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 2 μήνες εντελώς δωρεάν</li>
+                        <li class="flex items-center text-slate-200"><svg class="w-5 h-5 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Προτεραιότητα υποστήριξης</li>
+                    </ul>
+                    <a href="https://prosfo.app" class="w-full block text-center bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl font-bold transition shadow-lg shadow-blue-600/30">Ξεκίνα με Δωρεάν Δοκιμή</a>
+                </div>
             </div>
+            <p class="text-center text-slate-500 mt-6 text-sm">Οι τιμές δεν περιλαμβάνουν ΦΠΑ. Αυτόματη αφαίρεση (Reverse Charge) για έγκυρα B2B ΑΦΜ.</p>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="container mx-auto px-6 py-24 border-t border-slate-800/50">
+    <section class="container mx-auto px-6 py-24">
         <div class="fade-element text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Δείτε τι λένε οι επαγγελματίες</h2>
             <p class="text-slate-400 text-lg">Η επιτυχία κρύβεται στον χρόνο που κερδίζετε.</p>
@@ -215,9 +310,9 @@
     <section class="container mx-auto px-6 py-20 mb-6">
         <div class="fade-element bg-gradient-to-b from-blue-900/30 to-slate-900 rounded-3xl border border-blue-500/20 p-12 text-center max-w-4xl mx-auto shadow-2xl">
             <h2 class="text-3xl md:text-5xl font-black mb-6 text-white">Άσε το AI να κάνει τη χαρτούρα.</h2>
-            <p class="text-slate-400 text-lg mb-8">Εσύ κάνε τη δουλειά, εμείς φτιάχνουμε την προσφορά.</p>
+            <p class="text-slate-400 text-lg mb-8">Δοκίμασε το εντελώς δωρεάν για 7 ημέρες. Δεν απαιτείται πιστωτική κάρτα.</p>
             <a href="https://prosfo.app" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-9 py-4 rounded-xl font-bold text-lg transition transform hover:scale-105 shadow-xl">
-                Ξεκίνα Δωρεάν
+                Ξεκίνα Τώρα Δωρεάν
             </a>
         </div>
     </section>
@@ -232,7 +327,7 @@
         </div>
     </footer>
 
-    <!-- Script για τα Fade-in Animations (Αντικαθιστά το Framer Motion) -->
+    <!-- Script για τα Fade-in Animations -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const observer = new IntersectionObserver((entries) => {
