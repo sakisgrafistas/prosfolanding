@@ -152,46 +152,107 @@
         </div>
     </section>
 
-    <section class="bg-slate-900/40 py-24 border-y border-slate-800/60">
-        <div class="container mx-auto px-6">
-            <h2 class="fade-element text-3xl md:text-4xl font-bold text-center mb-16">Ένα πλήρες γραφείο στην τσέπη σου</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+    <!-- ΕΝΟΤΗΤΑ: Changelog / Τι νέο υπάρχει (Μεταφέρθηκε εδώ) -->
+    <section class="py-24 bg-slate-900/40 border-t border-slate-800/60" id="changelog">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="fade-element text-center mb-16">
+                <span class="text-4xl block mb-4">🚀</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Τι νέο υπάρχει στο Prosfo.app</h2>
+                <p class="text-slate-400 text-lg">Εξελίσσουμε την εφαρμογή συνεχώς με βάση τις δικές σας ανάγκες.</p>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-6 space-y-12 pb-4">
                 
-                <div class="fade-element bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Διαχωρισμός Δεδομένων</h3>
-                    <p class="text-slate-400 text-sm">Αναγνωρίζει μέσα από το ελεύθερο κείμενό σου τι είναι ανταλλακτικό, τι είναι υπηρεσία, ποσότητες και τελικό κόστος.</p>
-                </div>
-                
-                <div class="fade-element delay-100 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Έξυπνοι Νομικοί Όροι</h3>
-                    <p class="text-slate-400 text-sm">Αντιλαμβάνεται την ειδικότητά σου και γράφει αυτόματα τις ρήτρες προστασίας που ταιριάζουν ακριβώς στον κλάδο σου.</p>
-                </div>
-                
-                <div class="fade-element delay-200 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Έως 5 Φωτογραφίες</h3>
-                    <p class="text-slate-400 text-sm">Βγάλε φωτογραφίες την ώρα της αυτοψίας και το σύστημα θα τις ενσωματώσει αυτόματα στο τελικό PDF.</p>
+                <!-- Έκδοση 2.3 -->
+                <div class="fade-element relative pl-8 md:pl-12">
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 bg-blue-500 rounded-full border-4 border-slate-950 shadow-[0_0_15px_rgba(59,130,246,0.6)] z-10"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
+                        <span class="inline-block bg-blue-500/20 text-blue-400 font-bold px-3 py-1 rounded-full text-sm border border-blue-500/30 w-max">V2.3</span>
+                        <span class="text-blue-400 text-sm font-semibold uppercase tracking-wider">Νεότερη</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Εκπτώσεις & έξυπνες υπενθυμίσεις</h3>
+                    
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Πες «κάνε 10% έκπτωση» ή όρισε σταθερό ποσό σε € και μπαίνει αυτόματα.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Η έκπτωση φαίνεται καθαρά ξεχωριστή γραμμή στην προσφορά και στο PDF.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Σωστός υπολογισμός: αρχική αξία, έκπτωση, καθαρή αξία, ΦΠΑ, τελικό σύνολο.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Υπενθυμίσεις με email και στο κινητό πριν λήξει η δοκιμή ή η συνδρομή σου.</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="fade-element bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Εγκατάσταση στο Κινητό</h3>
-                    <p class="text-slate-400 text-sm">Λειτουργεί σαν κανονικό app (PWA) στην οθόνη του κινητού σου, χωρίς να γεμίζει τον αποθηκευτικό σου χώρο.</p>
+                <!-- Έκδοση 2.0 -->
+                <div class="fade-element delay-100 relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-2 w-4 h-4 bg-slate-600 rounded-full border-4 border-slate-950 z-10"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
+                        <span class="inline-block bg-slate-800 text-slate-300 font-medium px-3 py-1 rounded-full text-sm border border-slate-700 w-max">v2.0</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-200 mb-4">Ομαδοποιημένη προσφορά, ΦΠΑ & νέα εμφάνιση</h3>
+                    
+                    <ul class="space-y-3 text-slate-400">
+                        <li class="flex items-start">
+                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
+                            <span>Η προσφορά χωρίζεται αυτόματα σε Υλικά, Εργασία και Λοιπά.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
+                            <span>Επιλογή συντελεστή ΦΠΑ για Ελλάδα και Κύπρο — ή τιμές με ΦΠΑ.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
+                            <span>Επαγγελματικό PDF με το λογότυπό σου και τα στοιχεία σου.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
+                            <span>Φωτογραφίες του έργου μέσα στην προσφορά.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
+                            <span>Εγκατάσταση της εφαρμογής στην αρχική οθόνη του κινητού.</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="fade-element delay-100 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Αυτόματο IBAN & IRIS</h3>
-                    <p class="text-slate-400 text-sm">Αποθήκευσε το λογότυπο, τα στοιχεία της εταιρείας σου, το IBAN και το IRIS μια φορά. Μπαίνουν σε κάθε προσφορά αυτόματα.</p>
+                <!-- Έκδοση 1.0 -->
+                <div class="fade-element delay-200 relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-2 w-4 h-4 bg-slate-700 rounded-full border-4 border-slate-950 z-10"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
+                        <span class="inline-block bg-slate-800 text-slate-400 font-medium px-3 py-1 rounded-full text-sm border border-slate-800 w-max">v1.0</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-400 mb-4">Η πρώτη έκδοση του prosfo.app</h3>
+                    
+                    <ul class="space-y-3 text-slate-500">
+                        <li class="flex items-start">
+                            <span class="text-slate-600 mr-3 mt-0.5 shrink-0">▪</span>
+                            <span>Φτιάξε προσφορά μιλώντας — σε 50+ γλώσσες, με αποτέλεσμα στα ελληνικά.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-600 mr-3 mt-0.5 shrink-0">▪</span>
+                            <span>Άμεση αποστολή PDF σε WhatsApp, Viber, email ή εκτύπωση.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-600 mr-3 mt-0.5 shrink-0">▪</span>
+                            <span>Αυτόματη αρίθμηση και πλήρες ιστορικό προσφορών.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-600 mr-3 mt-0.5 shrink-0">▪</span>
+                            <span>Τα στοιχεία σου μπαίνουν αυτόματα σε κάθε προσφορά.</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="fade-element delay-200 bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-lg hover:border-blue-500/50 transition-colors">
-                    <div class="text-blue-500 mb-4"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg></div>
-                    <h3 class="text-xl font-semibold mb-3">Ιστορικό & Οργάνωση</h3>
-                    <p class="text-slate-400 text-sm">Δες ποιες προσφορές έγιναν αποδεκτές, βρες παλιούς πελάτες και κάνε επανάληψη (duplicate) σε δευτερόλεπτα.</p>
-                </div>
             </div>
         </div>
     </section>
@@ -343,112 +404,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ΝΕΑ ΕΝΟΤΗΤΑ: Changelog / Τι νέο υπάρχει -->
-    <section class="py-24 bg-slate-900/40 border-t border-slate-800/60" id="changelog">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="fade-element text-center mb-16">
-                <span class="text-4xl block mb-4">🚀</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Τι νέο υπάρχει στο Prosfo.app</h2>
-                <p class="text-slate-400 text-lg">Εξελίσσουμε την εφαρμογή συνεχώς με βάση τις δικές σας ανάγκες.</p>
-            </div>
-
-            <!-- Timeline Container -->
-            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-6 space-y-12 pb-4">
-                
-                <!-- Έκδοση 2.3 -->
-                <div class="fade-element relative pl-8 md:pl-12">
-                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 bg-blue-500 rounded-full border-4 border-slate-950 shadow-[0_0_15px_rgba(59,130,246,0.6)] z-10"></div>
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
-                        <span class="inline-block bg-blue-500/20 text-blue-400 font-bold px-3 py-1 rounded-full text-sm border border-blue-500/30 w-max">V2.3</span>
-                        <span class="text-blue-400 text-sm font-semibold uppercase tracking-wider">Νεότερη</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Εκπτώσεις & έξυπνες υπενθυμίσεις</h3>
-                    
-                    <ul class="space-y-3 text-slate-300">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Πες «κάνε 10% έκπτωση» ή όρισε σταθερό ποσό σε € και μπαίνει αυτόματα.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Η έκπτωση φαίνεται καθαρά ξεχωριστή γραμμή στην προσφορά και στο PDF.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Σωστός υπολογισμός: αρχική αξία, έκπτωση, καθαρή αξία, ΦΠΑ, τελικό σύνολο.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-blue-500 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            <span>Υπενθυμίσεις με email και στο κινητό πριν λήξει η δοκιμή ή η συνδρομή σου.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Έκδοση 2.0 -->
-                <div class="fade-element delay-100 relative pl-8 md:pl-12">
-                    <div class="absolute -left-[9px] top-2 w-4 h-4 bg-slate-600 rounded-full border-4 border-slate-950 z-10"></div>
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
-                        <span class="inline-block bg-slate-800 text-slate-300 font-medium px-3 py-1 rounded-full text-sm border border-slate-700 w-max">v2.0</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-200 mb-4">Ομαδοποιημένη προσφορά, ΦΠΑ & νέα εμφάνιση</h3>
-                    
-                    <ul class="space-y-3 text-slate-400">
-                        <li class="flex items-start">
-                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
-                            <span>Η προσφορά χωρίζεται αυτόματα σε Υλικά, Εργασία και Λοιπά.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
-                            <span>Επιλογή συντελεστή ΦΠΑ για Ελλάδα και Κύπρο — ή τιμές με ΦΠΑ.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
-                            <span>Επαγγελματικό PDF με το λογότυπό σου και τα στοιχεία σου.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
-                            <span>Φωτογραφίες του έργου μέσα στην προσφορά.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-slate-500 mr-3 mt-0.5 shrink-0">▪</span>
-                            <span>Εγκατάσταση της εφαρμογής στην αρχική οθόνη του κινητού.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Έκδοση 1.0 -->
-                <div class="fade-element delay-200 relative pl-8 md:pl-12">
-                    <div class="absolute -left-[9px] top-2 w-4 h-4 bg-slate-700 rounded-full border-4 border-slate-950 z-10"></div>
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-2">
-                        <span class="inline-block bg-slate-800 text-slate-400 font-medium px-3 py-1 rounded-full text-sm border border-slate-800 w-max">v1.0</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-400 mb-4">Η πρώτη έκδοση του prosfo.app</h3>
-                    
-                    <ul class="space-y-3 text-slate-500">
-                        <li class="flex items-start">
-                            <span class="text-slate-600 mr-3 mt-0.5 shrink-0">▪</span>
-                            <span>Φτιάξε προσφορά μιλώντας — σε 50+ γλώσσες, με αποτέλεσμα στα ελληνικά.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-slate-600 mr-3 mt-0.5 shrink-0">▪</span>
-                            <span>Άμεση αποστολή PDF σε WhatsApp, Viber, email ή εκτύπωση.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-slate-600 mr-3 mt-0.5 shrink-0">▪</span>
-                            <span>Αυτόματη αρίθμηση και πλήρες ιστορικό προσφορών.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-slate-600 mr-3 mt-0.5 shrink-0">▪</span>
-                            <span>Τα στοιχεία σου μπαίνουν αυτόματα σε κάθε προσφορά.</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- /ΤΕΛΟΣ ΕΝΟΤΗΤΑΣ CHANGELOG -->
 
     <section class="container mx-auto px-6 py-12">
         <div class="fade-element mx-auto max-w-5xl rounded-2xl border border-slate-800 bg-slate-900/60 p-2 shadow-2xl shadow-blue-900/10 relative">
