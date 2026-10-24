@@ -191,7 +191,7 @@
         </div>
     </section>
 
-    <!-- ΕΝΟΤΗΤΑ: Υπερδυνάμεις AI (Smart Memory, Μετάφραση, Περιγραφή AI) -->
+   <!-- ΕΝΟΤΗΤΑ: Υπερδυνάμεις AI (Smart Memory, Φωνητικός Βοηθός, Μετάφραση, Περιγραφή AI) -->
     <section id="features" class="py-24 bg-slate-950 border-t border-slate-800/60">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="fade-element text-center mb-16">
@@ -200,7 +200,9 @@
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto">Δεν είναι απλά μια φόρμα συμπλήρωσης. Είναι ένας έξυπνος βοηθός που μαθαίνει πώς δουλεύεις.</p>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
+            <!-- GRID 2x2 για τις 4 κάρτες -->
+            <div class="grid md:grid-cols-2 gap-8">
+                
                 <!-- Κάρτα 1: Smart Memory -->
                 <div class="fade-element bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950/50 p-8 rounded-3xl border border-blue-500/30 shadow-2xl flex flex-col justify-between">
                     <div>
@@ -229,8 +231,36 @@
                     </div>
                 </div>
 
-                <!-- Κάρτα 2: Μετάφραση σε 6 γλώσσες -->
-                <div class="fade-element delay-100 bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950/50 p-8 rounded-3xl border border-cyan-500/30 shadow-2xl flex flex-col justify-between">
+                <!-- Κάρτα 2: Φωνητικός Βοηθός (ΝΕΟ) -->
+                <div class="fade-element delay-100 bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/50 p-8 rounded-3xl border border-emerald-500/30 shadow-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-4xl">🎙️</span>
+                            <span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/30 uppercase tracking-wider">Φωνητικος Βοηθος</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Φυσική συνομιλία με το AI</h3>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                            Πες ταυτόχρονα εργασία, ποσότητα και τιμή. Το Prosfo τα καταχωρεί όλα σε μία απάντηση με απόλυτη ακρίβεια.
+                        </p>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-emerald-400 mr-2.5 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span><strong>Ρωτάει μόνο ό,τι λείπει:</strong> Δεν μαντεύει στοιχεία, ζητάει διευκρινίσεις μόνο αν χρειάζεται.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-emerald-400 mr-2.5 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span><strong>Χρόνος για σκέψη:</strong> Μεγαλύτερη ανοχή στις παύσεις για να μιλάς με τον ρυθμό σου.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-emerald-400 mr-2.5 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span><strong>Απευθείας δημιουργία:</strong> Αν έχεις πει τα πάντα, η προσφορά βγαίνει κατευθείαν χωρίς διακοπές.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Κάρτα 3: Μετάφραση σε 6 γλώσσες -->
+                <div class="fade-element delay-200 bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950/50 p-8 rounded-3xl border border-cyan-500/30 shadow-2xl flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="text-4xl">🌍</span>
@@ -257,8 +287,8 @@
                     </div>
                 </div>
 
-                <!-- Κάρτα 3: Εμπλουτισμός Περιγραφής & Ασφάλεια -->
-                <div class="fade-element delay-200 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/50 p-8 rounded-3xl border border-indigo-500/30 shadow-2xl flex flex-col justify-between">
+                <!-- Κάρτα 4: Εμπλουτισμός Περιγραφής & Ασφάλεια -->
+                <div class="fade-element delay-300 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/50 p-8 rounded-3xl border border-indigo-500/30 shadow-2xl flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="text-4xl">🔒</span>
@@ -284,6 +314,7 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
