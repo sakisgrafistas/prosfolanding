@@ -222,7 +222,7 @@
         .rings i:nth-child(2) { animation-delay: -.73s; } .rings i:nth-child(3) { animation-delay: -1.46s; }
         @keyframes ring { from { transform: scale(.55); opacity: .85; } to { transform: scale(calc(1.5 + var(--v, .3) * 1.2)); opacity: 0; } }
         .bars { left: -26%; top: 68.2%; width: 152%; --z: -40px; }
-        .bars-in { display: flex; justify-content: space-between; align-items: center; height: 130px; margin-top: -65px; transform: scaleY(calc(.32 + var(--v, .35) * 1)); }
+        .bars-in { display: flex; justify-content: space-between; align-items: center; height: 130px; margin-top: -65px; transform: scaleY(calc(.32 + var(--v, .35) * 1)); transition: transform .25s ease-out; }
         .bars-in i { width: 3px; height: calc(var(--h) * 100%); border-radius: 3px; background: linear-gradient(180deg, #19d3ff, #2f7bff); animation: eq .9s ease-in-out infinite alternate; animation-delay: var(--d); }
         .f-sign { padding: 7px 10px; border-radius: 14px; background: #f6f8fd; box-shadow: 0 26px 44px -14px rgba(0, 0, 0, .95); --z: 80px; }
         .f-sign svg { width: 100%; height: auto; overflow: visible; }
@@ -919,7 +919,7 @@
                 st.ph.style.removeProperty('--vis');
                 st.ph.style.removeProperty('--fv');
                 st.off = undefined;
-                if (reduced) setQ(st, 1); else playOnce.observe(st.ph);
+                if (reduced) setQ(st, 1);
             });
         };
         const showStep = (i) => {
@@ -1016,18 +1016,22 @@
         };
         new IntersectionObserver(([e]) => { stepsVisible = e.isIntersecting; kickSteps(); }).observe(stepsSec);
 
-        // Στο κινητό τα ίδια εφέ παίζουν μία φορά, μόλις φανεί κάθε βήμα
-        const playOnce = new IntersectionObserver((entries) => entries.forEach((e) => {
-            if (!e.isIntersecting || pinned) return;
-            playOnce.unobserve(e.target);
-            const st = stages.find((x) => x.ph === e.target), t0 = performance.now();
-            const tick = (t) => {
-                const q = clamp((t - t0) / 2800);
+        // Σε στενές οθόνες κάθε κινητό ακολουθεί τη θέση του στο scroll
+        let barsCalm = 0;
+        const stackedFrame = (vh) => {
+            const dy = Math.abs(scrollY - lastY);
+            lastY = scrollY;
+            stages[0].ph.style.setProperty('--v', clamp(dy / 24).toFixed(2));
+            clearTimeout(barsCalm);
+            barsCalm = setTimeout(() => stages[0].ph.style.setProperty('--v', '.25'), 140);
+            stages.forEach((st) => {
+                const r = st.ph.parentElement.getBoundingClientRect();
+                if (r.bottom < -200 || r.top > vh + 200) return;
+                const q = clamp((vh * .82 - r.top) / (vh * .62));
                 setQ(st, q);
-                if (q < 1 && !pinned) requestAnimationFrame(tick);
-            };
-            requestAnimationFrame(tick);
-        }), { threshold: .4 });
+                st.ph.style.transform = `perspective(1000px) rotateY(${((.5 - q) * 16).toFixed(2)}deg) rotateX(${((q - .5) * 5).toFixed(2)}deg) scale(${(.93 + Math.sin(q * Math.PI) * .07).toFixed(4)})`;
+            });
+        };
 
         steps.forEach((s, i) => s.addEventListener('click', () => {
             if (!pinned) return;
@@ -1039,6 +1043,7 @@
             const y = scrollY, vh = innerHeight;
             head.classList.toggle('is-stuck', y > 8);
             bar.style.transform = `scaleX(${clamp(y / (document.documentElement.scrollHeight - vh)).toFixed(4)})`;
+            if (!pinned && !reduced) stackedFrame(vh);
             if (!reduced && y < vh * 1.4) {
                 phone.style.transform = `translate3d(${(mx * 12).toFixed(1)}px,${(y * -.06 + my * 8).toFixed(1)}px,0) rotateY(${(mx * 7 - 6).toFixed(2)}deg) rotateX(${(my * -5).toFixed(2)}deg)`;
                 card.style.transform = `translate3d(${(mx * -20).toFixed(1)}px,${(y * -.14 + my * -12).toFixed(1)}px,0)`;
