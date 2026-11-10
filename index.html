@@ -455,6 +455,30 @@
         .iv-mic svg { width: 17px; height: 17px; }
         @keyframes inc-ping { from { transform: scale(1); opacity: .9; } to { transform: scale(1.8); opacity: 0; } }
 
+        /* Στενές οθόνες: το κινητό μένει σταθερό και η εικόνα αλλάζει με το scroll, όπως στο desktop */
+        .steps-pre { padding-top: var(--section); background: var(--bg); }
+        .steps-pre .head { margin-bottom: 0; }
+        .pin-sm .steps-stage { display: block; padding: 90px 0 14px; }
+        .pin-sm .steps-stage > .wrap, .pin-sm .steps-col { height: 100%; }
+        .pin-sm .steps-grid { display: block; height: 100%; }
+        .pin-sm .ghost, .pin-sm .steps-halo, .pin-sm .steps-halo-g { display: none; }
+        .pin-sm .steps-list { height: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: auto auto minmax(0, 1fr); gap: 16px 0; }
+        .pin-sm .steps-list::before { content: ""; grid-row: 1; grid-column: 1 / -1; align-self: center; height: 2px; margin: 0 6px 0 46px; background: var(--line-2); }
+        .pin-sm .step { display: contents; }
+        .pin-sm .step:nth-child(1) > :is(.step-n, .step-bar) { grid-column: 1; }
+        .pin-sm .step:nth-child(2) > :is(.step-n, .step-bar) { grid-column: 2; }
+        .pin-sm .step:nth-child(3) > :is(.step-n, .step-bar) { grid-column: 3; }
+        .pin-sm .step:nth-child(4) > :is(.step-n, .step-bar) { grid-column: 4; }
+        .pin-sm .step .step-n { grid-row: 1; position: relative; z-index: 1; width: 40px; height: 40px; border-radius: 12px; font-size: 16px; background: var(--bg); }
+        .pin-sm .step-bar { grid-row: 1; align-self: center; margin: 0 6px 0 46px; }
+        .pin-sm .step-body { grid-row: 2; grid-column: 1 / -1; opacity: 0; translate: 0 10px; pointer-events: none; transition: opacity .35s, translate .45s var(--ease); }
+        .pin-sm .step.is-current .step-body { opacity: 1; translate: none; pointer-events: auto; }
+        .pin-sm .step-more { grid-template-rows: 1fr; }
+        .pin-sm .step-body h3 { padding-top: 0; font-size: 1.3rem; color: var(--text); }
+        .pin-sm .step p { margin-top: 6px; font-size: 15px; }
+        .pin-sm .step-media { position: relative; grid-row: 3; grid-column: 1 / -1; right: auto; top: auto; width: auto; height: auto; translate: none; container-type: size; }
+        .pin-sm .ph { width: min(74%, 100cqh * var(--ar)); }
+
         @media (max-width: 860px) {
             .inc ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .inc li, .inc .w4 { grid-column: span 1; min-height: 182px; padding: 18px 16px; gap: 16px; }
@@ -631,8 +655,8 @@
                         <div class="steps-halo" aria-hidden="true"></div>
                         <div class="steps-halo-g" aria-hidden="true"></div>
                         <div class="ghost" data-ghost aria-hidden="true"><b class="is-on">1</b><b>2</b><b>3</b><b>4</b></div>
-                        <div>
-                            <div class="head rv">
+                        <div class="steps-col">
+                            <div class="head rv" data-steps-head>
                                 <span class="eyebrow">Πώς Δουλεύει</span>
                                 <h2>Από την αυτοψία στην ψηφιακή υπογραφή σε 1 λεπτό</h2>
                                 <p class="lead">Χωρίς υπολογιστή, χωρίς Excel. Συζητάς με την εφαρμογή και σου στήνει τα πάντα.</p>
@@ -1047,12 +1071,27 @@
         const phone = $('[data-phone]'), card = $('[data-q]'), desk = $('[data-desk]');
         const stepsSec = $('[data-steps]'), steps = $$('[data-step]'), fills = $$('[data-step-bar]');
         const pinQuery = matchMedia('(min-width: 1024px) and (min-height: 600px)');
-        let pinned = false, current = 0, mx = 0, my = 0, ticking = false;
+        const smQuery = matchMedia('(max-width: 1023px) and (min-height: 560px)');
+        const stepsHead = $('[data-steps-head]'), stepsCol = $('.steps-col', stepsSec);
+        const stepsPre = document.createElement('div');
+        stepsPre.className = 'steps-pre';
+        stepsPre.innerHTML = '<div class="wrap"></div>';
+        let pinned = false, pinSm = false, current = 0, mx = 0, my = 0, ticking = false;
         let sP = 0, vel = 0, lastY = scrollY, tmx = 0, tmy = 0, smx = 0, smy = 0;
 
         const setPin = () => {
-            pinned = pinQuery.matches && !reduced;
+            pinned = (pinQuery.matches || smQuery.matches) && !reduced;
+            pinSm = pinned && !pinQuery.matches;
+            // Στο κινητό ο τίτλος της ενότητας περνάει κανονικά πριν «κολλήσει» η σκηνή
+            if (pinSm) {
+                if (!stepsPre.isConnected) stepsSec.before(stepsPre);
+                stepsPre.firstChild.append(stepsHead);
+            } else if (stepsHead.parentElement !== stepsCol) {
+                stepsCol.prepend(stepsHead);
+                stepsPre.remove();
+            }
             stepsSec.classList.toggle('pin-on', pinned);
+            stepsSec.classList.toggle('pin-sm', pinSm);
             $$('.step-n', stepsSec).forEach((b) => { b.disabled = !pinned; });
             if (pinned) {
                 $$('.rv', stepsSec).forEach((el) => el.classList.remove('rv', 'is-in'));
@@ -1147,7 +1186,7 @@
                 const cq = clamp(q);
                 const ry = turn * 58 + (.5 - cq) * 12 + smx * 16 * vis;
                 const rx = (cq - .5) * 5 - smy * 11 * vis;
-                st.ph.style.transform = `translate3d(${(turn * 130).toFixed(1)}px,${((.5 - cq) * 26).toFixed(1)}px,0) rotateY(${ry.toFixed(2)}deg) rotateX(${rx.toFixed(2)}deg) scale(${(.84 + vis * .16).toFixed(4)})`;
+                st.ph.style.transform = `translate3d(${(turn * (pinSm ? 60 : 130)).toFixed(1)}px,${((.5 - cq) * 26).toFixed(1)}px,0) rotateY(${ry.toFixed(2)}deg) rotateX(${rx.toFixed(2)}deg) scale(${(.84 + vis * .16).toFixed(4)})`;
                 st.ph.style.setProperty('--vis', vis.toFixed(3));
                 st.ph.style.setProperty('--fv', smooth(clamp((vis - .45) / .5)).toFixed(3));
                 setQ(st, cq);
@@ -1208,7 +1247,7 @@
         const schedule = () => { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
         addEventListener('scroll', schedule, { passive: true });
         addEventListener('resize', schedule, { passive: true });
-        pinQuery.addEventListener('change', () => { setPin(); schedule(); });
+        [pinQuery, smQuery].forEach((m) => m.addEventListener('change', () => { setPin(); schedule(); }));
         setPin();
         paint();
 
